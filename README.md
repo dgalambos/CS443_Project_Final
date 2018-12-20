@@ -78,6 +78,7 @@ DMBP:~ Doron$
 * Go back to the Gallery and click on the imported image.
 * Modify the metadata as needed. Try changing the GPS.
 * Click the "Go" button to update.
+
 *Note: This does not update the database. The old coordinates will remain. Import the image again to see the update one.*
 * Import the same image again. 
 * Open the map.
