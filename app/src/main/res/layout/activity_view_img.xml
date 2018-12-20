@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewImg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="298dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:contentDescription="@string/selectedimage" />
+
+            <GridLayout
+                android:id="@+id/GridLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="9"
+                tools:ignore="HardcodedText">
+
+                <!--Row 1-->
+                <TextView
+                    android:id="@+id/filename_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_gravity="start"
+                    android:text="Filename" />
+
+                <TextView
+                    android:id="@+id/current_filename_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnSpan="3"
+                    android:layout_gravity="start"
+                    android:text="filename_goes_here" />
+
+                <!--Row 2-->
+                <TextView
+                    android:id="@+id/date_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_gravity="start"
+                    android:text="Date/Time" />
+
+                <TextView
+                    android:id="@+id/current_date_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_gravity="start"
+                    android:text="null" />
+
+                <EditText
+                    android:id="@+id/current_date_time_input"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:layout_gravity="start"
+                    android:hint="Y:M:D H:M:S"
+                    android:inputType="datetime"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true">
+                </EditText>
+
+                <Button
+                    android:id="@+id/date_time_button"
+                    android:layout_width="47dp"
+                    android:layout_height="36dp"
+                    android:layout_row="1"
+                    android:layout_column="3"
+                    android:layout_gravity="end"
+                    android:onClick="setDateTime"
+                    android:text="GO" />
+
+
+                <!--Row 3-->
+                <TextView
+                    android:id="@+id/latitude_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:layout_gravity="start"
+                    android:text="Latitude" />
+
+                <TextView
+                    android:id="@+id/current_latitude_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:layout_gravity="start"
+                    android:text="null" />
+
+                <EditText
+                    android:id="@+id/latitude_input"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="2"
+                    android:hint="Latitude (GPS)"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="numberDecimal">
+                </EditText>
+
+                <Button
+                    android:id="@+id/latitude_button"
+                    android:layout_width="47dp"
+                    android:layout_height="36dp"
+                    android:layout_row="2"
+                    android:layout_column="3"
+                    android:layout_gravity="end"
+                    android:onClick="setLat"
+                    android:text="GO" />
+
+
+                <!--Row 4-->
+                <TextView
+                    android:id="@+id/latitude_ref_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="0"
+                    android:layout_gravity="start"
+                    android:text="Latitude Ref" />
+
+                <TextView
+                    android:id="@+id/current_latitude_ref_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="1"
+                    android:layout_gravity="start"
+                    android:text="null" />
+
+                <EditText
+                    android:id="@+id/latitude_ref_input"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="2"
+                    android:hint="(N/S)"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="textCapCharacters">
+                </EditText>
+
+                <Button
+                    android:id="@+id/latitude_ref_button"
+                    android:layout_width="47dp"
+                    android:layout_height="36dp"
+                    android:layout_row="3"
+                    android:layout_column="3"
+                    android:layout_gravity="end"
+                    android:onClick="setLatRef"
+                    android:text="GO" />
+
+
+                <!--Row 5-->
+                <TextView
+                    android:id="@+id/longitude_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="4"
+                    android:layout_column="0"
+                    android:layout_gravity="start"
+                    android:text="Longitude" />
+
+                <TextView
+                    android:id="@+id/current_longitude_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="4"
+                    android:layout_column="1"
+                    android:layout_gravity="start"
+                    android:text="null" />
+
+                <EditText
+                    android:id="@+id/longitude_input"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="4"
+                    android:layout_column="2"
+                    android:hint="Longitude (GPS)"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="numberDecimal">
+                </EditText>
+
+                <Button
+                    android:id="@+id/longitude_button"
+                    android:layout_width="47dp"
+                    android:layout_height="36dp"
+                    android:layout_row="4"
+                    android:layout_column="3"
+                    android:layout_gravity="end"
+                    android:onClick="setLon"
+                    android:text="GO" />
+
+
+                <!--Row 6-->
+                <TextView
+                    android:id="@+id/longitude_ref_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="5"
+                    android:layout_column="0"
+                    android:layout_gravity="start"
+                    android:text="Longitude Ref  " />
+
+                <TextView
+                    android:id="@+id/current_longitude_ref_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="5"
+                    android:layout_column="1"
+                    android:layout_gravity="start"
+                    android:text="null" />
+
+                <EditText
+                    android:id="@+id/longitude_ref_input"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="5"
+                    android:layout_column="2"
+                    android:hint="(W/E)"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="textCapCharacters">
+                </EditText>
+
+                <Button
+                    android:id="@+id/longitude_ref_button"
+                    android:layout_width="47dp"
+                    android:layout_height="36dp"
+                    android:layout_row="5"
+                    android:layout_column="3"
+                    android:layout_gravity="end"
+                    android:onClick="setLonRef"
+                    android:text="GO" />
+
+
+                <!--Row 7-->
+                <TextView
+                    android:id="@+id/make_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="6"
+                    android:layout_column="0"
+                    android:layout_gravity="start"
+                    android:text="Make" />
+
+                <TextView
+                    android:id="@+id/current_make_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="6"
+                    android:layout_column="1"
+                    android:layout_gravity="start"
+                    android:text="null" />
+
+                <EditText
+                    android:id="@+id/make_input"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="6"
+                    android:layout_column="2"
+                    android:hint="Make"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="text">
+                </EditText>
+
+                <Button
+                    android:id="@+id/make_button"
+                    android:layout_width="47dp"
+                    android:layout_height="36dp"
+                    android:layout_row="6"
+                    android:layout_column="3"
+                    android:layout_gravity="end"
+                    android:onClick="setMake"
+                    android:text="GO" />
+
+
+                <!--Row 8-->
+                <TextView
+                    android:id="@+id/model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="7"
+                    android:layout_column="0"
+                    android:layout_gravity="start"
+                    android:text="Model" />
+
+                <TextView
+                    android:id="@+id/current_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="7"
+                    android:layout_column="1"
+                    android:layout_gravity="start"
+                    android:text="null" />
+
+                <EditText
+                    android:id="@+id/model_input"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="7"
+                    android:layout_column="2"
+                    android:hint="Model"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true">
+                </EditText>
+
+                <Button
+                    android:id="@+id/model_button"
+                    android:layout_width="47dp"
+                    android:layout_height="36dp"
+                    android:layout_row="7"
+                    android:layout_column="3"
+                    android:onClick="setModel"
+                    android:text="GO" />
+
+
+                <!--Done Button-->
+                <Button
+                    android:id="@+id/done_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="8"
+                    android:layout_columnSpan="4"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/done" />
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
